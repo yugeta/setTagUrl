@@ -1,0 +1,49 @@
+{
+	"name": "debugger",
+	"short_name" : "DBG",
+	"version": "1.1",
+	"manifest_version": 2,
+
+	"description": "debugger",
+
+	"icons": {
+		"16" : "contents/img/icon_19.png",
+		"48" : "contents/img/icon_48.png",
+		"128": "contents/img/icon_128.png"
+	},
+	
+	"permissions":[
+		"tabs",
+		"storage",
+		"unlimitedStorage"
+	],
+
+	"browser_action":{
+		"matches":[
+			"http://*/*",
+			"https://*/*",
+			"file://*"
+		],
+		"default_icon":"contents/img/icon_48.png",
+		"default_title":"debugger",
+		"default_popup":"popup/index.html"
+	},
+
+	"content_scripts":[{
+		"matches":[
+			"http://*/*",
+			"https://*/*",
+			"file://*"
+		],
+		"js":[
+			"contents/js/lib.js",
+			"contents/js/init.js"
+		]
+	}],
+	
+	"background":{
+		"scripts":[
+			
+		]
+	}
+}
